@@ -8,6 +8,7 @@ module.exports = {
       es6: true,
       jquery: true,
       jasmine: true,
+      node: true
    },
    plugins: [
       'import',

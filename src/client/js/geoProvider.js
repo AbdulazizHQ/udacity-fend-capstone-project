@@ -1,8 +1,6 @@
 const fetch = require('node-fetch');
-const dotenv = require('dotenv');
-dotenv.config();
 
-const apiKey = process.env.GEONAMES_API_KEY;
+const apiKey = 'alqahtani';
 const apiEndpoint = 'http://api.geonames.org/search?';
 
 /**
@@ -15,7 +13,7 @@ function getCityInformation(cityName) {
    const params = new URLSearchParams({
       username: apiKey,
       type: 'json',
-      name: cityName
+      name: encodeURI(cityName)
    });
 
    return fetch(apiEndpoint + params)

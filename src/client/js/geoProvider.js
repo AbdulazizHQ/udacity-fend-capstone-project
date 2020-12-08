@@ -5,6 +5,11 @@ dotenv.config();
 const apiKey = process.env.GEONAMES_API_KEY;
 const apiEndpoint = 'http://api.geonames.org/search?';
 
+/**
+ * Get the city information from geonames.org API
+ * @param cityName
+ * @returns {Promise<{country: *, cityName: *, latitude: *, longitude: *} | void>}
+ */
 function getCityInformation(cityName) {
 
    const params = new URLSearchParams({

@@ -6,7 +6,7 @@ const {getCityImage} = require('./imageProvider');
 const vacationDestinationField = document.getElementById('vacation-destination');
 const vacationStartDateField = document.getElementById('vacation-start-date');
 const vacationEntDateField = document.getElementById('vacation-end-date');
-const vacationDestinationImage = document.getElementById('destination-image');
+const vacationDestinationImage = document.getElementById('destination-image-container');
 const vacationLengthField = document.getElementById('vacation-length');
 const destinationWeatherField = document.getElementById('destination-weather');
 
@@ -31,7 +31,8 @@ function handleSubmit(event) {
             });
          getCityImage(cityInformation.cityName, cityInformation.cityName)
             .then(url => {
-               vacationDestinationImage.setAttribute('src', url);
+               vacationDestinationImage.innerHTML =
+                  `<img id="destination-image" src="${url}" alt="${cityInformation.cityName}"/>`;
             });
       })
       .catch(err => {

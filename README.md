@@ -41,7 +41,8 @@ Information about the destination is prvoided by: [Geonames](http://api.geonames
 
 
 # Usage
-  2. `$ npm install`
+  1. `$ npm install`
+  2. `$ npm build`
   3. `$ npm start`
 
 # Testing

@@ -13,7 +13,7 @@ function getCityInformation(cityName) {
    const params = new URLSearchParams({
       username: apiKey,
       type: 'json',
-      name: encodeURI(cityName)
+      name: cityName
    });
 
    return fetch(apiEndpoint + params)

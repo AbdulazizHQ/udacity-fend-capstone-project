@@ -8,7 +8,10 @@ module.exports = {
       es6: true,
       jquery: true,
       jasmine: true,
-      node: true
+      node: true,
+   },
+   parserOptions: {
+      ecmaVersion: 11
    },
    plugins: [
       'import',
@@ -31,5 +34,5 @@ module.exports = {
       'array-bracket-spacing': 'error',
       quotes: ['error', 'single'],
       'no-undef': 'warn',
-   },
+   }
 };

@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Travel App</title>
-    </head>
-    <body>
-        <h1>Travel App</h1>
-        <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
-           </script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Travel Planner</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Travel Planner</h1>
+</header>
+<main>
+    <div id="content-box">
+        <form id="vacation-form">
+            <div id="form-fields">
+                <div class="form-field">
+                    <label for="vacation-destination">Where:</label>
+                    <input type="text" id="vacation-destination" name="vacation-destination">
+                </div>
+                <div class="form-field">
+                    <label for="vacation-start-date">Starts:</label>
+                    <input type="date" id="vacation-start-date" name="vacation-start-date">
+                </div>
+                <div class="form-field">
+                    <label for="vacation-end-date">Ends:</label>
+                    <input type="date" id="vacation-end-date" name="vacation-end-date">
+                </div>
+            </div>
+            <div class="form-submit">
+                <input id="submit-button" type="submit" value="Submit">
+            </div>
+        </form>
+        <div id="vacation-details">
+            <div id="destination-image-container">
+                <img id="destination-image" src=""/>
+            </div>
+            <div id="vacation-info">
+                <div id="vacation-length">
+                </div>
+                <div id="destination-weather">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+   // Check that service workers are supported
+   if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+         navigator.serviceWorker.register('/service-worker.js');
+      });
+   }
+</script>
+
+</body>
 </html>

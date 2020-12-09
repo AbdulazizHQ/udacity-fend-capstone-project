@@ -1,0 +1,129 @@
+html {
+  background-color: #f2f2f2;
+}
+
+body {
+  width: 80%;
+  margin: auto;
+}
+
+div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 5em;
+}
+
+main {
+  margin-top: 1.5%;
+}
+
+#content-box {
+  display: grid;
+  height: 70vh;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 70%;
+  grid-row-gap: 1%;
+  grid-template-areas:
+          "form"
+          "content";
+}
+
+#vacation-form, #vacation-details  {
+  background-color: #ffffff;
+  background-clip: border-box;
+  border: 2px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+#vacation-form {
+  grid-area: form;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "form submit";
+}
+
+#form-fields {
+  grid-area: form;
+  margin: auto 1vw;
+  width: 100%;
+}
+
+.form-field {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  width: 100%;
+}
+
+.form-field label {
+  width: 15%;
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+}
+
+.form-field input {
+  width: 70%;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px;
+
+}
+
+.form-field input:hover {
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+.form-submit {
+  grid-area: submit;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-submit input{
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(0,0,0,.125);
+  background: #ffffff;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.form-submit input:hover {
+  border: 1px solid rgba(0,0,0,.5);
+}
+
+
+#vacation-details {
+  padding: 1%;
+  grid-area: content;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 2%;
+  grid-template-areas:
+          "img info"
+          "img info";
+}
+
+#destination-image-container {
+  grid-area: img;
+}
+
+#destination-image-container img {
+  max-height:100%;
+  max-width:100%;
+}
+
+#vacation-info {
+  grid-area: info;
+}
+
+#vacation-length {
+  margin-bottom: 2%;
+}

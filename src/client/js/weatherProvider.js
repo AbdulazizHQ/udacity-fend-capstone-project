@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const {calculateLength} = require('./helper');
 
 const apiKey = 'd7b2c5d04324484a8e93c24bbf47be67';
 const forecastEndpoint = 'https://api.weatherbit.io/v2.0/forecast/daily?';
@@ -38,9 +39,16 @@ function getWeatherForecast(lat, lng, date) {
       });
 }
 
+/**
+ * Get predicted weather forecast from Weatherbit API for a given latitude and longitude
+ * @param lat
+ * @param lng
+ * @param date
+ * @returns {Promise<{maxTemp: *, description: *, minTemp: *} | void>}
+ */
 function getPredictedForecast(lat, lng, date) {
    const startDate = new Date(date);
-   startDate.setFullYear(startDate.getFullYear()-1);
+   startDate.setFullYear(2019);
 
    const nextDate = new Date(startDate);
    nextDate.setDate(nextDate.getDate() + 1);
@@ -69,7 +77,21 @@ function getPredictedForecast(lat, lng, date) {
       });
 }
 
+/**
+ * Get weather forecast or predicted forecast (based on date) from Weatherbit API for a given latitude and longitude
+ * @param lat
+ * @param lng
+ * @param date
+ * @returns {Promise<{maxTemp: *, description: *, minTemp: *} | void>}
+ */
+function getWeather(lat, lng, date) {
+   if (calculateLength(new Date(), new Date(date)) > 7) {
+      return getPredictedForecast(lat, lng, date);
+   } else {
+      return getWeatherForecast(lat, lng, date);
+   }
+}
+
 module.exports = {
-   getWeatherForecast,
-   getPredictedForecast
+   getWeather
 };

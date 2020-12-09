@@ -9,6 +9,10 @@ destination's whether and shows a preview image of their destination.
 Information about the destination is prvoided by: [Geonames](http://api.geonames.org)
 <br>Weather forecasts provided by: [Weatherbit](https://api.weatherbit.io)
 <br>Images provided by: [Pixaby](https://pixabay.com/api) 
+
+# Additional Features
+* Added vacation end date.
+* Use a picture of the country if there's no picture for the city.
   
 # Dependencies
 
